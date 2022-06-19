@@ -1,0 +1,140 @@
+@import "./iconfont/iconfont.css";
+
+@font-face {
+  font-family: test;
+  src: url("font/字心坊猫的天空之城.ttf");
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 24px;
+  font-family: test;
+  color: #fff;
+}
+
+body{
+  background: url("images/pk8o1e.webp") no-repeat center center/cover;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*备忘录容器*/
+.memorandum-container{
+  width: 1200px;
+  height: 600px;
+  display: flex;
+  border: 1px solid #96e6a1;
+}
+.memorandum-container section{
+  flex: 1;
+  border: 0;
+}
+
+
+/*备忘录列表信息*/
+.memorandum-list{
+  padding: 40px 30px;
+  overflow-y: auto;
+}
+.memorandum-list div{
+  position: relative;
+  padding: 0 30px;
+  margin-bottom: 20px;
+  display: flex;
+  transition: transform 2s ease;
+}
+.memorandum-list div:hover{
+  transform: scale(1.1);
+}
+
+.memorandum-list div::before{
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 5px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  box-shadow: 0 0 0 2px #96e6a1;
+}
+.memorandum-list div::after{
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255,255,255,0.2);
+  border-radius: 10px;
+  pointer-events: none;
+}
+
+.memorandum-list div i{
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 24px;
+  color: #96e6a1;
+  cursor: pointer;
+}
+.memorandum-list div i:hover{
+  color: red;
+}
+
+
+
+
+/* 写备忘录信息 */
+.add-memorandum{
+  position: relative;
+}
+.add-memorandum::before{
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 0;
+  width: 5px;
+  height: 80%;
+  background-color: #96e6a1;
+  border-radius: 2px;
+  transform: translateY(-50%);
+}
+.add-memorandum textarea{
+  width: 100%;
+  height: 100%;
+  padding: 40px 30px;
+  background-color: transparent;
+  border: 0;
+  font-size: 32px;
+  font-weight: bold;
+  color: #5a5e66;
+}
+.add-memorandum textarea:focus{
+  outline: 0;
+}
+
+
+
+/* 滚动条样式 */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 4px;
+}
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(255,255,255,0.9);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: #96e6a1;
+  background-image: -webkit-linear-gradient( 45deg, rgba(255, 255, 255, 0.2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.2) 75%, transparent 75%, transparent );
+}
+::-webkit-scrollbar-thumb:window-inactive {
+  background: rgba(227,227,227,0.5);
+}
