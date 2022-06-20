@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "NewTab",
+  "name": "Violet-Default-Page",
   "version": "1.0",
   "chrome_url_overrides": {
     "newtab": "newtab.html"
@@ -10,9 +10,13 @@
     "storage"
   ],
   "icons": {
+    "16": "images/icon.png",
+    "24": "images/icon.png",
+    "48": "images/icon.png",
+    "64": "images/icon.png",
     "1080": "images/icon.png"
   },
-  "description": "New tab with a simple watch.",
+  "description": "Violet的自定义默认页面",
   "options_page": "o.html",
   "offline_enabled": false
 }
