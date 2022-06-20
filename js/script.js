@@ -1,5 +1,5 @@
 
-// 存储相关
+// 存储备忘录信息
 MEMORANDUM_KEY = 'my_memorandum'
 
 function setMemorandum (memorandumList) {
@@ -8,6 +8,19 @@ function setMemorandum (memorandumList) {
 
 function getMemorandum() {
   return JSON.parse(localStorage.getItem(MEMORANDUM_KEY))
+}
+
+PHOTO_KEY = 'my_extension_photo'
+function setPhoto (src) {
+  localStorage.setItem(PHOTO_KEY, src)
+}
+
+function getPhoto() {
+  return localStorage.getItem(PHOTO_KEY)
+}
+
+if (getPhoto()) {
+  document.querySelector('.bg-image').src = getPhoto()
 }
 
 
@@ -150,8 +163,15 @@ document.querySelector('#set-photo').addEventListener('click', (event) => {
 })
 
 inputEl.addEventListener('change', (event) => {
-  console.log(event.target.files[0])
+  const reader = new FileReader()
+  reader.readAsDataURL(event.target.files[0])
+  reader.onload = function (thePhoto) {
+    document.querySelector('.bg-image').src = thePhoto.target.result
+    setPhoto(thePhoto.target.result)
+  }
 })
+
+
 
 
 

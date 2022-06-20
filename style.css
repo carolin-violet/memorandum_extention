@@ -16,7 +16,6 @@
 
 body{
   position: relative;
-  background: url("images/pk8o1e.webp") no-repeat center center/cover;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -32,6 +31,14 @@ body::before{
   height: 100%;
   background-color: rgba(255,255,255,0.1);
   pointer-events: none;
+}
+
+.bg-image{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  z-index: -1;
 }
 
 
@@ -65,7 +72,7 @@ body::before{
   margin: 5px 10px;
 }
 #change-baidu{
-  color: #c7d2fe;
+  color: #3245DF;
 }
 #change-google{
   color: #85FFBD;
