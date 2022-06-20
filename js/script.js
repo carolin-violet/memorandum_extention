@@ -105,6 +105,13 @@ googleItem.addEventListener('click', () => {
   searchInput.value = null
 })
 
+youdaoItem = document.querySelector('#change-youdao')
+youdaoItem.addEventListener('click', () => {
+  searchInput.placeholder = '网易有道翻译'
+  temp = 'youdao'
+  searchInput.value = null
+})
+
 
 
 searchInput.addEventListener('keydown', (event) => {
@@ -113,6 +120,8 @@ searchInput.addEventListener('keydown', (event) => {
       window.open(`https://kaifa.baidu.com/searchPage?wd=${event.target.value.trim()}&module=SEARCH`)
     } else if (temp === 'google') {
       window.open(`https://www.google.com.hk/search?q=${event.target.value.trim()}`)
+    } else if (temp === 'youdao') {
+      window.open(`https://dict.youdao.com/w/eng/${event.target.value.trim()}/#keyfrom=dict2.index`)
     }
  }
 })

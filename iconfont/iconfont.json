@@ -6,6 +6,13 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "316375",
+      "name": "youdao_1193429_easyicon.net",
+      "font_class": "youdao1193429easyiconnet",
+      "unicode": "e65c",
+      "unicode_decimal": 58972
+    },
+    {
       "icon_id": "11983544",
       "name": "google",
       "font_class": "google",
