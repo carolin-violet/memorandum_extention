@@ -131,7 +131,7 @@ function openSearch() {
     case "baidu": window.open(`https://kaifa.baidu.com/searchPage?wd=${searchKey}&module=SEARCH`);break;
     case 'google': window.open(`https://www.google.com.hk/search?q=${searchKey}`);break;
     case 'youdao': window.open(`https://dict.youdao.com/w/eng/${searchKey}/#keyfrom=dict2.index`);break;
-    case  'csdn': window.open(`https://so.csdn.net/so/search?${searchKey}`);break;
+    case  'csdn': window.open(`https://so.csdn.net/so/search?q=${searchKey}`);break;
     case  'juejin': window.open(`https://juejin.cn/search?query=${searchKey}`);break;
     case  'bilibili': window.open(`https://search.bilibili.com/all?keyword=${searchKey}`);break;
     case  'youtube': window.open(`https://www.youtube.com/results?search_query=${searchKey}`);break;
