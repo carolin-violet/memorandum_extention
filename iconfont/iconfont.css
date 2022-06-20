@@ -1,8 +1,8 @@
 @font-face {
   font-family: "iconfont"; /* Project id 3197203 */
-  src: url('iconfont.woff2?t=1655690778408') format('woff2'),
-       url('iconfont.woff?t=1655690778408') format('woff'),
-       url('iconfont.ttf?t=1655690778408') format('truetype');
+  src: url('iconfont.woff2?t=1655696652583') format('woff2'),
+       url('iconfont.woff?t=1655696652583') format('woff'),
+       url('iconfont.ttf?t=1655696652583') format('truetype');
 }
 
 .iconfont {
@@ -11,6 +11,26 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-github:before {
+  content: "\e603";
+}
+
+.icon-youtube:before {
+  content: "\ea07";
+}
+
+.icon-bilibili:before {
+  content: "\e609";
+}
+
+.icon-csdn:before {
+  content: "\e60c";
+}
+
+.icon-juejin:before {
+  content: "\e60b";
 }
 
 .icon-youdao:before {

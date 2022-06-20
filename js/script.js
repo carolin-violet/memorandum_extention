@@ -88,40 +88,57 @@ function formatDateTime(date) {
 
 
 // 监听输入框输入并打开新搜索页
+
+placeholderObj = {
+  "baidu": '百度开发者搜索',
+  "google": '谷歌搜索',
+  "youdao": '有道中英翻译',
+  "csdn": 'csdn搜索',
+  "juejin": '掘金搜索',
+  'bilibili': "bilibili搜索",
+  "youtube": 'youtube搜索',
+  "github": 'github搜索'
+}
+
 searchInput = document.querySelector('.search-input')
 let temp = 'baidu'
+let searchKey = null
 
-baiduItem = document.querySelector('#change-baidu')
-baiduItem.addEventListener('click', () => {
-  searchInput.placeholder = '百度开发者搜索'
-  temp = 'baidu'
-  searchInput.value = null
+const changeIConList = document.querySelectorAll('.change-icon')
+changeIConList.forEach(icon => {
+  icon.addEventListener('click', () => {
+    searchInput.placeholder = placeholderObj[icon.id.split('-')[1]]
+    temp = icon.id.split('-')[1]
+    searchInput.value = null
+  })
 })
 
-googleItem = document.querySelector('#change-google')
-googleItem.addEventListener('click', () => {
-  searchInput.placeholder = '谷歌搜索'
-  temp = 'google'
-  searchInput.value = null
+function openSearch() {
+  switch (temp) {
+    case "baidu": window.open(`https://kaifa.baidu.com/searchPage?wd=${searchKey}&module=SEARCH`);break;
+    case 'google': window.open(`https://www.google.com.hk/search?q=${searchKey}`);break;
+    case 'youdao': window.open(`https://dict.youdao.com/w/eng/${searchKey}/#keyfrom=dict2.index`);break;
+    case  'csdn': window.open(`https://so.csdn.net/so/search?${searchKey}`);break;
+    case  'juejin': window.open(`https://juejin.cn/search?query=${searchKey}`);break;
+    case  'bilibili': window.open(`https://search.bilibili.com/all?keyword=${searchKey}`);break;
+    case  'youtube': window.open(`https://www.youtube.com/results?search_query=${searchKey}`);break;
+    case  'github': window.open(`https://github.com/search?q=${searchKey}`);break;
+  }
+}
+
+searchInput.addEventListener('input', (event) => {
+  searchKey = event.target.value.trim()
 })
-
-youdaoItem = document.querySelector('#change-youdao')
-youdaoItem.addEventListener('click', () => {
-  searchInput.placeholder = '网易有道翻译'
-  temp = 'youdao'
-  searchInput.value = null
-})
-
-
 
 searchInput.addEventListener('keydown', (event) => {
   if (event.keyCode === 13) {
-    if (temp === 'baidu') {
-      window.open(`https://kaifa.baidu.com/searchPage?wd=${event.target.value.trim()}&module=SEARCH`)
-    } else if (temp === 'google') {
-      window.open(`https://www.google.com.hk/search?q=${event.target.value.trim()}`)
-    } else if (temp === 'youdao') {
-      window.open(`https://dict.youdao.com/w/eng/${event.target.value.trim()}/#keyfrom=dict2.index`)
-    }
+    openSearch()
+    event.target.value = null
  }
 })
+
+document.getElementById('search-icon').addEventListener('click', () => {
+  openSearch()
+  searchInput.value = null
+})
+

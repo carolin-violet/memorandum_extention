@@ -38,12 +38,13 @@ body::before{
 
 /*输入框容器*/
 .change-search{
+  padding-left: 22px;
   text-align: center;
 }
 .change-search i{
   cursor: pointer;
-  margin-left: 12px;
   font-size: 24px;
+  margin: 5px 10px;
 }
 #change-baidu{
   color: #c7d2fe;
@@ -52,12 +53,27 @@ body::before{
   color: #85FFBD;
 }
 #change-youdao{
-  color: red;
+  color: #FF0000;
+}
+#change-csdn{
+  color: #d81e06;
+}
+#change-juejin{
+  color: #006CFF;
+}
+#change-bilibili{
+  color: #20B0E3;
+}
+#change-youtube{
+  color: #FF0000;
+}
+#change-github{
+  color: #555555;
 }
 
 
 .search-input{
-  width: 250px;
+  width: 400px;
   height: 60px;
   background-color: transparent;
   color: #fff;

@@ -6,6 +6,41 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "13253771",
+      "name": "github",
+      "font_class": "github",
+      "unicode": "e603",
+      "unicode_decimal": 58883
+    },
+    {
+      "icon_id": "11983519",
+      "name": "youtube",
+      "font_class": "youtube",
+      "unicode": "ea07",
+      "unicode_decimal": 59911
+    },
+    {
+      "icon_id": "26267546",
+      "name": "bilibili",
+      "font_class": "bilibili",
+      "unicode": "e609",
+      "unicode_decimal": 58889
+    },
+    {
+      "icon_id": "26267563",
+      "name": "csdn",
+      "font_class": "csdn",
+      "unicode": "e60c",
+      "unicode_decimal": 58892
+    },
+    {
+      "icon_id": "26267597",
+      "name": "juejin",
+      "font_class": "juejin",
+      "unicode": "e60b",
+      "unicode_decimal": 58891
+    },
+    {
       "icon_id": "316375",
       "name": "youdao_1193429_easyicon.net",
       "font_class": "youdao1193429easyiconnet",
