@@ -15,19 +15,72 @@
 }
 
 body{
+  position: relative;
   background: url("images/pk8o1e.webp") no-repeat center center/cover;
   height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+body::before{
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255,255,255,0.1);
+  pointer-events: none;
+}
+
+
+
+/*输入框容器*/
+.change-search{
+  text-align: center;
+}
+.change-search i{
+  cursor: pointer;
+}
+#change-baidu{
+  color: #c7d2fe;
+}
+#change-google{
+  color: #85FFBD;
+  margin-left: 12px;
+}
+
+.search-input{
+  width: 250px;
+  height: 60px;
+  background-color: transparent;
+  color: #fff;
+  border: 3px solid #96e6a1;
+  border-radius: 15px;
+  padding: 10px 50px 10px 30px;
+  transition: all 1s ease;
+}
+
+.search-input:focus{
+  outline: 0;
+  width: 800px;
+}
+.search i{
+  position: relative;
+  color: #fff;
+  font-size: 30px;
+  left: -50px;
+  cursor: pointer;
 }
 
 /*备忘录容器*/
 .memorandum-container{
+  margin-top: 30px;
   width: 1200px;
   height: 600px;
   display: flex;
-  border: 1px solid #96e6a1;
+  border: 5px solid #96e6a1;
 }
 .memorandum-container section{
   flex: 1;
@@ -49,6 +102,9 @@ body{
 }
 .memorandum-list div:hover{
   transform: scale(1.1);
+}
+.memorandum-list div:hover i{
+  opacity: 1;
 }
 
 .memorandum-list div::before{
@@ -82,12 +138,12 @@ body{
   font-size: 24px;
   color: #96e6a1;
   cursor: pointer;
+  opacity: 0;
+  transition: all 1s ease;
 }
 .memorandum-list div i:hover{
   color: red;
 }
-
-
 
 
 /* 写备忘录信息 */

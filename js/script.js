@@ -86,3 +86,33 @@ function formatDateTime(date) {
   return `${year}-${month}-${day} ${hour}:${minute}:${second}`
 }
 
+
+// 监听输入框输入并打开新搜索页
+searchInput = document.querySelector('.search-input')
+let temp = 'baidu'
+
+baiduItem = document.querySelector('#change-baidu')
+baiduItem.addEventListener('click', () => {
+  searchInput.placeholder = '百度开发者搜索'
+  temp = 'baidu'
+  searchInput.value = null
+})
+
+googleItem = document.querySelector('#change-google')
+googleItem.addEventListener('click', () => {
+  searchInput.placeholder = '谷歌搜索'
+  temp = 'google'
+  searchInput.value = null
+})
+
+
+
+searchInput.addEventListener('keydown', (event) => {
+  if (event.keyCode === 13) {
+    if (temp === 'baidu') {
+      window.open(`https://kaifa.baidu.com/searchPage?wd=${event.target.value.trim()}&module=SEARCH`)
+    } else if (temp === 'google') {
+      window.open(`https://www.google.com.hk/search?q=${event.target.value.trim()}`)
+    }
+ }
+})

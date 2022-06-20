@@ -13,7 +13,6 @@
     "1080": "images/icon.png"
   },
   "description": "New tab with a simple watch.",
-
   "options_page": "o.html",
   "offline_enabled": false
 }
