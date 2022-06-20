@@ -142,3 +142,17 @@ document.getElementById('search-icon').addEventListener('click', () => {
   searchInput.value = null
 })
 
+// 更新图片
+// 点击整个按钮出发上传按钮
+inputEl = document.querySelector('.photo-input')
+document.querySelector('#set-photo').addEventListener('click', (event) => {
+  inputEl.click()
+})
+
+inputEl.addEventListener('change', (event) => {
+  console.log(event.target.files[0])
+})
+
+
+
+
