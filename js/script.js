@@ -1,8 +1,7 @@
-
 // 存储备忘录信息
 MEMORANDUM_KEY = 'my_memorandum'
 
-function setMemorandum (memorandumList) {
+function setMemorandum(memorandumList) {
   localStorage.setItem(MEMORANDUM_KEY, JSON.stringify(memorandumList))
 }
 
@@ -11,7 +10,8 @@ function getMemorandum() {
 }
 
 PHOTO_KEY = 'my_extension_photo'
-function setPhoto (src) {
+
+function setPhoto(src) {
   localStorage.setItem(PHOTO_KEY, src)
 }
 
@@ -29,7 +29,7 @@ if (getPhoto()) {
 let memorandumListEl = document.querySelector('.memorandum-list')
 let memorandumList = getMemorandum() || []
 
-function changeMemorandumList () {
+function changeMemorandumList() {
   memorandumListEl.innerHTML = ''
 
   if (memorandumList.length < 1) memorandumListEl.innerHTML = '暂无记录信息'
@@ -48,8 +48,8 @@ changeMemorandumList(memorandumList)
 // 添加备忘录信息
 let memorandumTextEl = document.querySelector('.memorandum-text')
 let memorandumText = null
-memorandumTextEl.addEventListener('input', (event)=> {
-   memorandumText = event.target.value
+memorandumTextEl.addEventListener('input', (event) => {
+  memorandumText = event.target.value
 })
 memorandumTextEl.addEventListener('keydown', (event) => {
   if (event.keyCode === 13) {
@@ -67,7 +67,7 @@ memorandumTextEl.addEventListener('keydown', (event) => {
 
 
 // 添加点击删除监听事件的方法
-function addDel () {
+function addDel() {
   delIcons = document.querySelectorAll('.iconfont')
   delIcons.forEach(item => {
     item.addEventListener('click', (event) => {
@@ -110,7 +110,10 @@ placeholderObj = {
   "juejin": '掘金搜索',
   'bilibili': "bilibili搜索",
   "youtube": 'youtube搜索',
-  "github": 'github搜索'
+  "github": 'github搜索',
+  "gitee": 'gitee搜索',
+  "stackoverflow": 'stackoverflow搜索',
+  "zhihu": 'zhihu搜索'
 }
 
 searchInput = document.querySelector('.search-input')
@@ -128,14 +131,39 @@ changeIConList.forEach(icon => {
 
 function openSearch() {
   switch (temp) {
-    case "baidu": window.open(`https://kaifa.baidu.com/searchPage?wd=${searchKey}&module=SEARCH`);break;
-    case 'google': window.open(`https://www.google.com.hk/search?q=${searchKey}`);break;
-    case 'youdao': window.open(`https://dict.youdao.com/w/eng/${searchKey}/#keyfrom=dict2.index`);break;
-    case  'csdn': window.open(`https://so.csdn.net/so/search?q=${searchKey}`);break;
-    case  'juejin': window.open(`https://juejin.cn/search?query=${searchKey}`);break;
-    case  'bilibili': window.open(`https://search.bilibili.com/all?keyword=${searchKey}`);break;
-    case  'youtube': window.open(`https://www.youtube.com/results?search_query=${searchKey}`);break;
-    case  'github': window.open(`https://github.com/search?q=${searchKey}`);break;
+    case "baidu":
+      window.open(`https://kaifa.baidu.com/searchPage?wd=${searchKey}&module=SEARCH`);
+      break;
+    case 'google':
+      window.open(`https://www.google.com.hk/search?q=${searchKey}`);
+      break;
+    case 'youdao':
+      window.open(`https://dict.youdao.com/w/eng/${searchKey}/#keyfrom=dict2.index`);
+      break;
+    case 'csdn':
+      window.open(`https://so.csdn.net/so/search?q=${searchKey}`);
+      break;
+    case 'juejin':
+      window.open(`https://juejin.cn/search?query=${searchKey}`);
+      break;
+    case 'bilibili':
+      window.open(`https://search.bilibili.com/all?keyword=${searchKey}`);
+      break;
+    case 'youtube':
+      window.open(`https://www.youtube.com/results?search_query=${searchKey}`);
+      break;
+    case 'github':
+      window.open(`https://github.com/search?q=${searchKey}`);
+      break;
+    case 'gitee':
+      window.open(`https://search.gitee.com/?skin=rec&type=repository&q=${searchKey}`);
+      break;
+    case 'stackoverflow':
+      window.open(`https://stackoverflow.com/search?q=${searchKey}`);
+      break;
+    case 'zhihu':
+      window.open(`https://www.zhihu.com/search?type=content&q=${searchKey}`);
+      break;
   }
 }
 
@@ -147,7 +175,7 @@ searchInput.addEventListener('keydown', (event) => {
   if (event.keyCode === 13) {
     openSearch()
     event.target.value = null
- }
+  }
 })
 
 document.getElementById('search-icon').addEventListener('click', () => {
@@ -172,7 +200,16 @@ inputEl.addEventListener('change', (event) => {
 })
 
 
-
-
-
-
+bgImage = document.querySelector('.bg-image')
+searchInput.onfocus = function() {
+  bgImage.classList.add('search-focus')
+}
+searchInput.onblur = function() {
+  bgImage.classList.remove('search-focus')
+}
+memorandumTextEl.onfocus = function() {
+  bgImage.classList.add('search-focus')
+}
+memorandumTextEl.onblur = function() {
+  bgImage.classList.remove('search-focus')
+}

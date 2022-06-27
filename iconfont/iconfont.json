@@ -6,6 +6,27 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "26267572",
+      "name": "gitee",
+      "font_class": "gitee",
+      "unicode": "e60d",
+      "unicode_decimal": 58893
+    },
+    {
+      "icon_id": "15559659",
+      "name": "知乎",
+      "font_class": "shejiaotubiao-10",
+      "unicode": "e641",
+      "unicode_decimal": 58945
+    },
+    {
+      "icon_id": "11983516",
+      "name": "stackoverflow",
+      "font_class": "stackoverflow",
+      "unicode": "ea05",
+      "unicode_decimal": 59909
+    },
+    {
       "icon_id": "1261987",
       "name": "photo",
       "font_class": "photo",

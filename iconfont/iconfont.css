@@ -1,8 +1,8 @@
 @font-face {
   font-family: "iconfont"; /* Project id 3197203 */
-  src: url('iconfont.woff2?t=1655698247717') format('woff2'),
-       url('iconfont.woff?t=1655698247717') format('woff'),
-       url('iconfont.ttf?t=1655698247717') format('truetype');
+  src: url('iconfont.woff2?t=1656293716520') format('woff2'),
+       url('iconfont.woff?t=1656293716520') format('woff'),
+       url('iconfont.ttf?t=1656293716520') format('truetype');
 }
 
 .iconfont {
@@ -11,6 +11,18 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-gitee:before {
+  content: "\e60d";
+}
+
+.icon-zhihu:before {
+  content: "\e641";
+}
+
+.icon-stackoverflow:before {
+  content: "\ea05";
 }
 
 .icon-photo:before {
