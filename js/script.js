@@ -194,7 +194,7 @@ inputEl.addEventListener('change', (event) => {
   const reader = new FileReader()
   reader.readAsDataURL(event.target.files[0])
   reader.onload = function (thePhoto) {
-    document.querySelector('.bg-image').src = thePhoto.target.result
+    document.querySelector('#bg-image').src = thePhoto.target.result
     setPhoto(thePhoto.target.result)
   }
 })
