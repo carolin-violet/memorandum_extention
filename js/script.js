@@ -20,7 +20,7 @@ function getPhoto() {
 }
 
 if (getPhoto()) {
-  document.querySelector('.bg-image').src = getPhoto()
+  document.querySelector('#bg-image').src = getPhoto()
 }
 
 
